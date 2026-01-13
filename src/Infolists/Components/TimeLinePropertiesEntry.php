@@ -17,10 +17,10 @@ class TimeLinePropertiesEntry extends Entry
     {
         parent::setup();
 
-        $this->configurePropertieEntry();
+        $this->configurePropertiesEntry();
     }
 
-    protected function configurePropertieEntry(): void
+    protected function configurePropertiesEntry(): void
     {
         $this
             ->hiddenLabel()

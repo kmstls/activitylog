@@ -6,8 +6,6 @@
                 ->class(['fi-in-text w-full -mt-6'])
         }}
     >
-
         {{ $getModifiedState() }}
-
     </div>
 </x-dynamic-component>

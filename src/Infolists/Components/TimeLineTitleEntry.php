@@ -44,7 +44,7 @@ class TimeLineTitleEntry extends Entry
         return $this;
     }
 
-    protected function configureTitleEntry()
+    protected function configureTitleEntry(): void
     {
         $this
             ->hiddenLabel()

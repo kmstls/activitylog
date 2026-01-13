@@ -7,7 +7,7 @@ use Illuminate\Support\HtmlString;
 
 trait HasModifyState
 {
-    protected $state;
+    protected Closure $state;
 
     public function modifyState(Closure $callback): static
     {

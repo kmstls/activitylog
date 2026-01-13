@@ -12,7 +12,7 @@ class ActivityLogHelper
      * @param  mixed  $class  The class or object instance to check.
      * @param  string  $trait  The fully qualified name of the trait to look for.
      */
-    public static function classUsesTrait($class, $trait): bool
+    public static function classUsesTrait(mixed $class, string $trait): bool
     {
         $traits = class_uses_recursive($class);
 

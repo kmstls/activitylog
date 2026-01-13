@@ -11,7 +11,7 @@ trait HasCustomActivityResource
      *
      * @param  Model  $record  The activity log record providing context.
      */
-    public function getFilamentActualResourceModel($record): Model
+    public function getFilamentActualResourceModel(Model $record): Model
     {
         return $record;
     }

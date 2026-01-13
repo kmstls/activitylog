@@ -1,4 +1,6 @@
 @php
+    use Illuminate\View\ComponentAttributeBag;
+
     $isContained = $isContained();
 @endphp
 
@@ -18,14 +20,12 @@
     >
         @if (count($childComponentContainers = $getChildComponentContainers()))
             <ol class="relative border-gray-200 border-s dark:border-gray-700">
-                <x-filament::grid
-                    :default="$getGridColumns('default')"
-                    :sm="$getGridColumns('sm')"
-                    :md="$getGridColumns('md')"
-                    :lg="$getGridColumns('lg')"
-                    :xl="$getGridColumns('xl')"
-                    :two-xl="$getGridColumns('2xl')"
-                    class="gap-2"
+                <div
+                    {{
+                        (new ComponentAttributeBag)
+                            ->grid($getGridColumns())
+                            ->class(['fi-in-repeatable-items gap-2'])
+                    }}
                 >
                     @foreach ($childComponentContainers as $container)
                         <li
@@ -38,12 +38,12 @@
                             {{ $container }}
                         </li>
                     @endforeach
-                </x-filament::grid>
+                </div>
             </ol>
         @elseif (($placeholder = $getPlaceholder()) !== null)
-            <x-filament-infolists::entries.placeholder>
+            <x-filament-infolists::entry-wrapper>
                 {{ $placeholder }}
-            </x-filament-infolists::entries.placeholder>
+            </x-filament-infolists::entry-wrapper>
         @endif
     </div>
 </x-dynamic-component>
