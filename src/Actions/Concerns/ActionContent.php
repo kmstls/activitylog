@@ -50,10 +50,6 @@ trait ActionContent
 
     protected ?Closure $shouldModifyTitleUsing;
 
-    protected string|Closure|Htmlable|null $modalHeading;
-
-    protected string|Closure|Htmlable|null $modalDescription;
-
     public static function getDefaultName(): ?string
     {
         return 'activitylog_timeline';
