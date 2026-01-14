@@ -71,13 +71,15 @@ class ActivitylogForm
                         }),
                 ]),
 
-                Section::make()
+                Section::make(__('activitylog::forms.fields.properties.label'))
                     ->schema([
                         CodeEntry::make('properties')
-                            ->label(__('activitylog::forms.fields.properties.label'))
-                            ->grammar(Grammar::Json),
+                            ->hiddenLabel()
+                            ->grammar(Grammar::Json)
+                            ->columnSpanFull(),
                     ])
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->collapsed(),
             ]);
     }
 }
