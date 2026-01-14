@@ -11,7 +11,7 @@ class TimeLinePropertiesEntry extends Entry
 {
     use HasModifyState;
 
-    protected string $view = 'activitylog::filament.infolists.components.time-line-propertie-entry';
+    protected string $view = 'activitylog::filament.infolists.components.time-line-properties-entry';
 
     protected function setup(): void
     {
